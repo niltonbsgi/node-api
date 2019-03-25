@@ -6,9 +6,10 @@ const mongoose = require('mongoose');
 
 const app = express();
 const router  = express.Router();
+const config = require('./config');
 
 //Conecat ao banco
-mongoose.connect('mongodb+srv://nilton:161008pln@cluster0-jxnk7.mongodb.net/ndstr');
+mongoose.connect(config.connectionString);
 
 // Carrega os models
 const Product = require('./model/product');
